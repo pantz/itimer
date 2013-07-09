@@ -1,0 +1,13 @@
+{
+	"dependencies": {
+		"requirejs": "latest",
+		"jquery": "latest",
+		"underscore": "latest",
+		"backbone": "latest",
+		"layoutmanager": "latest",
+		"mustache": "latest",
+		"less.js": "latest",
+		"bootstrap": "latest",
+		"json2": "latest"
+	}
+}
