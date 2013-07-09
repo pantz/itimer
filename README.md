@@ -1,1 +1,3 @@
-Read me.
+#iTimer
+
+## Because everything is more exciting with a timer
