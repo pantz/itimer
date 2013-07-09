@@ -1,0 +1,16 @@
+{
+	"require": {
+		"slim/slim": "2.2.0",
+		"slim/extras": "2.0.3",
+		"gabordemooij/redbean": "3.3.6",
+		"mustache/mustache": "2.1.0"
+	},
+	"autoload": {
+		"files" : ["vendor/gabordemooij/redbean/RedBean/redbean.inc.php"],
+		"psr-0": {
+			"Base": "code/",
+			"Timer": "code/",
+			"Database" : "libraries/"
+		}
+	}
+}

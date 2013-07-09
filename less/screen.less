@@ -1,0 +1,41 @@
+@import "../js/vendor/bootstrap/less/bootstrap.less";
+@import "../js/vendor/bootstrap/less/responsive.less";
+@import "bootstrap-custom.less";
+
+html, 
+body {
+	height:100%;
+}
+
+#wrapper {
+	min-height: 100%;
+}
+
+#body {
+	padding-bottom: 60px;
+}
+
+#push,
+#footer {
+	height:60px;
+}
+
+#footer {
+	position: relative;
+	margin-top: -60px; /* negative value of footer height */
+	height: 60px;
+	clear:both;
+	background:@grayLighter;
+	p {
+		text-align:center;
+		padding-top:20px;
+	}
+}
+
+.jumbotron {
+	margin:60px;
+	text-align:center;
+	h1 {
+		font-size:71px;
+	}
+}

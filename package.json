@@ -1,0 +1,27 @@
+{
+	"name": "timer",
+	"description": "A simple countdown timer",
+	"version": "1.0.0",
+	"author": "Ryan George <hello@ryangeorge.ca>",
+	"homepage": "http://timer.ryangeorge.ca/",
+	"repository": {
+		"type": "git"
+	},
+	"main": "js",
+	"engines": {
+		"node": ">= 0.6.0"
+	},
+	"dependancies" : {
+		"jquery" : "~1.9.0",
+		"underscore" : "~1.4.4",
+		"backbone" : "~0.9.10",
+		"backbone.layoutmanager" : "~0.8.4",
+		"require" : "~2.1.4"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.0",
+		"grunt-contrib-less": "~0.5.0",
+		"grunt-contrib-uglify": "~0.1.1",
+		"grunt-contrib-watch" : "~0.2.0"
+	}
+}
