@@ -1,6 +1,10 @@
 @import "../js/vendor/bootstrap/less/bootstrap.less";
 @import "../js/vendor/bootstrap/less/responsive.less";
+@import "../js/vendor/bootstrap-datepicker/less/datepicker.less";
+@import "../js/vendor/bootstrap-timepicker/less/timepicker.less";
+
 @import "bootstrap-custom.less";
+@FontAwesomePath:   "../js/vendor/font-awesome/font";
 
 html, 
 body {
@@ -37,5 +41,26 @@ body {
 	text-align:center;
 	h1 {
 		font-size:71px;
+	}
+}
+
+.timer {
+	.title {
+		font-size:31px;
+		font-weight:bold;
+	}
+	.image, .title {
+		text-align:center;
+		margin-bottom:15px;
+	}
+	.countdown_section {
+		width:25%;
+		float:left;
+		text-align:center;
+		font-size:31px;
+		line-height:31px;
+		.countdown_amount {
+			
+		}
 	}
 }

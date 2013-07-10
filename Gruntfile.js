@@ -12,39 +12,59 @@ grunt.initConfig({
 		'* Copyright (c) <%= grunt.template.today("yyyy") %> ' +
 		'<%= pkg.author %>;*/'
 	},
-	watch: {
-		gruntFile : {
-			files : ['www/less/*.less','www/js/lib/bootstrap/less/*.less'],
-			tasks : ['less:development']
-		}
-	},
-	lint : {
-		files :  [
-			'www/js/main.js'
-		]
-	},
-	uglify: {
-		options : {
-			banner : '/* <%= pkg.name %> */\n'
-		},
-		build : {
-			src : 'www/js/main.js',
-			dest : '<%= pkg.name %>.<%= pkg.version %>.min.js'
-		}
-	},
 	less : {
-		development : {
+		testing : {
+			options : {
+				compress:false
+			},
 			files : {
-				'www/css/screen.css' : ['www/js/lib/bootstrap/less/bootstrap.less', 'www/less/screen.less']
+				'css/screen.css' : 'less/screen.less'
+			}
+		},
+		production : {
+			options : {
+				compress:true,
+				yuicompress:true,
+				dumpLineNumbers:"all"
+			},
+			files : {
+				'css/screen.min.css' : 'less/screen.less'
 			}
 		}
-	}
+	},
+	concat : {
+		build : {
+			src: [
+				'js/vendor/bootstrap/bootstrap/js/bootstrap.js',
+				'js/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js',
+				'js/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js',
+				'js/vendor/jquery-countdown/jquery.countdown.js',
+				'js/vendor/jquery-itimer/jquery.itimer.js'
+			],
+			dest: 'js/dist/itimer.js'
+		}
+	},
+	uglify: {
+		alltrack : {
+			files: {
+				'js/dist/itimer.min.js': ['js/dist/itimer.js']
+			},
+			options : {
+				banner: '/* \n'+ 
+				' * <%= pkg.name %> v<%= pkg.version %>\n' +
+				' * <%= grunt.template.today("yyyy-mm-dd, h:MM:ss TT") %>\n' +
+				' * <%= pkg.author %>\n' +
+				' * Copyright (c) <%= grunt.template.today("yyyy") %> - <%= pkg.description %> \n' +
+				' */ \n\n'
+			}
+		}
+	},
 });
 
-grunt.loadNpmTasks('grunt-contrib-watch');
-grunt.loadNpmTasks('grunt-contrib-less');
+grunt.loadNpmTasks('grunt-contrib-concat');
 grunt.loadNpmTasks('grunt-contrib-uglify');
+grunt.loadNpmTasks('grunt-contrib-less');
 
-grunt.registerTask('default', ['less']);
+grunt.registerTask('default', ['less', 'concat', 'uglify']);
 
 };

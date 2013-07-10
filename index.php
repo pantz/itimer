@@ -1,18 +1,82 @@
 <?php
 
-require 'vendor/autoload.php';
-	
-	$app = new \Slim\Slim(array(
-		'mode'=>'development',
-		'templates.path' => 'templates'
-	));
-	
-	new \Timer\Routes($app);
+//Basic setup
+define('BASE_URL', 'http://timer.ryan.local/');
+define('BASEPATH', dirname(__FILE__).'/');
+define('MODE', 'Release');
 
+//Sessions are used for notifications only at this point
+session_cache_limiter(false);
+session_start();
+
+require 'vendor/autoload.php';
+
+//Setup redbean
+R::setup('mysql:host=localhost;dbname=slim','root','');
+
+//Setup uploader
+Uploader\Uploader::setup(array('basepath'=>BASEPATH));
+	
+//Slim setup
+$app = new \Slim\Slim(array(
+	'mode'=>MODE,
+	'templates.path' => 'templates'
+));
+
+	//Routes
 	$app->get('/', function () use ($app) {
-		$app->render('home.mustache');
+		$app->render('header.php');
+		$app->render('home.php');
+		$app->render('footer.php');
 	});
 
-	$app->run();
+	$app->get('/timers', function () use ($app) {
+		$timers = R::findAll('timer', ' ORDER BY `id` DESC');
+		$app->render('header.php');
+		$app->render('timers.php', array('timers'=>$timers));
+		$app->render('footer.php');
+	});
+
+	$app->get('/view/:id', function ($id) use ($app) {
+		$timer = R::load('timer', $id);
+		if(!$timer->id){
+			throw new Exception('Timer not found');
+		}
+		$app->render('header.php');
+		$app->render('view.php', array('timer'=>$timer));
+		$app->render('footer.php');
+	});
+
+	$app->get('/create', function () use ($app) {
+		$app->render('header.php');
+		$app->render('create.php');
+		$app->render('footer.php');
+	});
+
+	$app->post('/create', function () use ($app) {
+		$timer = R::dispense('timer');
+		$timer->Text = $app->request()->post('Text');
+		$timer->EndDate = strtotime($app->request()->post('EndDate').$app->request()->post('EndTime'));
+		$timer->UserIp = $app->request()->getIp();
+
+		$id = R::store($timer);
+
+		if(isset($_FILES['Background']))
+		{
+			$file = new \Uploader\Uploader();
+			$result = $file->upload('Background');
+
+			//Save any files that were uploaded
+			$timer->Background = $result;
+			R::store($timer);
+		}
+
+		//Redirect to view page
+		$app->flash('success', 'Timer <strong>'.$app->request()->post('Text').'</strong> created!');
+		$app->redirect('/view/'.$id);
+	});
+
+//Load the app
+$app->run();
 
 ?>
