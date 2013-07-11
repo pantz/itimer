@@ -1,5 +1,5 @@
 <div class="row">
-	<form action="/create" class="form-horizontal" method="post" enctype="multipart/form-data">
+	<form action="<?php echo BASE_URL; ?>create" class="form-horizontal" method="post" enctype="multipart/form-data">
 		<legend>Create a new timer by filling in the form below.</legend>
 		<div class="control-group">
 			<label for="Text" class="control-label">Text</label>

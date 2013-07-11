@@ -1,9 +1,11 @@
 <?php
 
-//Basic setup
-define('BASE_URL', 'http://timer.ryan.local/');
+if(!file_exists('config.php'))
+	require('config.default.php');
+else
+	require('config.php');
+
 define('BASEPATH', dirname(__FILE__).'/');
-define('MODE', 'Release');
 
 //Sessions are used for notifications only at this point
 session_cache_limiter(false);
@@ -12,7 +14,12 @@ session_start();
 require 'vendor/autoload.php';
 
 //Setup redbean
-R::setup('mysql:host=localhost;dbname=slim','root','');
+R::setup(DB_ENGINE.':host='.DB_HOST.';dbname='.DB_NAME,DB_USER,DB_PASSWORD);
+
+if(MODE === 'Release')
+{
+	R::freeze();
+}
 
 //Setup uploader
 Uploader\Uploader::setup(array('basepath'=>BASEPATH));
@@ -40,7 +47,7 @@ $app = new \Slim\Slim(array(
 	$app->get('/view/:id', function ($id) use ($app) {
 		$timer = R::load('timer', $id);
 		if(!$timer->id){
-			throw new Exception('Timer not found');
+			throw new Exception('TimerNotFoundException');
 		}
 		$app->render('header.php');
 		$app->render('view.php', array('timer'=>$timer));

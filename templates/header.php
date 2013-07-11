@@ -15,7 +15,7 @@
 	<script src="<?php echo BASE_URL; ?>js/vendor/jquery-itimer/jquery.itimer.js"></script>
 
 	<?php } else { ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>css/screen.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>css/screen.min.css" />
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="<?php echo BASE_URL; ?>js/dist/itimer.min.js"></script>
 	<?php } ?>
@@ -34,10 +34,10 @@
 	<div class="navbar navbar-inverse">
 		<div class="navbar-inner">
 			<div class="container">
-				<a class="brand" href="/">iTimer</a>
+				<a class="brand" href="<?php echo BASE_URL; ?>">iTimer</a>
 				<div class="nav">
 				<ul class="nav">
-					<li><a href="/timers">Timers</a></li>
+					<li><a href="<?php echo BASE_URL; ?>timers">Timers</a></li>
 				</ul>
 				</div>
 			</div>
