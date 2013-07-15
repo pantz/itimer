@@ -16,11 +16,6 @@ require 'vendor/autoload.php';
 //Setup redbean
 R::setup(DB_ENGINE.':host='.DB_HOST.';dbname='.DB_NAME,DB_USER,DB_PASSWORD);
 
-if(MODE === 'Release')
-{
-	R::freeze();
-}
-
 //Setup uploader
 Uploader\Uploader::setup(array('basepath'=>BASEPATH));
 	
