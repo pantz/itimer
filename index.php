@@ -5,6 +5,9 @@ if(!file_exists('config.php'))
 else
 	require('config.php');
 
+//Set timezone based on browser later
+date_default_timezone_set('America/Regina');
+
 define('BASEPATH', dirname(__FILE__).'/');
 
 //Sessions are used for notifications only at this point

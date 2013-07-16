@@ -2963,9 +2963,7 @@ var plugin = $.countdown = new Countdown(); // Singleton instance
 				base.options = $.extend({},$.itimer.defaultOptions, options);
 
 				var d = new Date().getTimezoneOffset()*60*1000;
-				console.log(d);
 				var until = new Date((base.options.until*1000)+d);
-				console.log(until);
 
 				$('.countdown', base.el).countdown({
 					until: until,
