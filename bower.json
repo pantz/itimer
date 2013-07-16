@@ -1,14 +1,8 @@
 {
 	"dependencies": {
-		"requirejs": "latest",
 		"jquery": "latest",
-		"underscore": "latest",
-		"backbone": "latest",
-		"layoutmanager": "latest",
-		"mustache": "0.7.2",
 		"less.js": "1.3.3",
 		"bootstrap": "latest",
-		"json2": "latest",
 		"bootstrap-datepicker":"latest",
 		"bootstrap-timepicker":"latest",
 		"font-awesome":"latest"
