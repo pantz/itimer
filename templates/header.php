@@ -8,7 +8,7 @@
 	<script src="<?php echo BASE_URL; ?>js/vendor/less.js/dist/less-1.3.3.js"></script>
 
 	<script src="<?php echo BASE_URL; ?>js/vendor/jquery/jquery.js"></script>
-	<script src="<?php echo BASE_URL; ?>js/vendor/bootstrap/bootstrap/js/bootstrap.js"></script>
+	<script src="<?php echo BASE_URL; ?>js/vendor/bootstrap/docs/assets/js/bootstrap.js"></script>
 	<script src="<?php echo BASE_URL; ?>js/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 	<script src="<?php echo BASE_URL; ?>js/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
 	<script src="<?php echo BASE_URL; ?>js/vendor/jquery-countdown/jquery.countdown.js"></script>

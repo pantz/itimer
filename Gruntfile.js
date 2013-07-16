@@ -35,7 +35,7 @@ grunt.initConfig({
 	concat : {
 		build : {
 			src: [
-				'js/vendor/bootstrap/bootstrap/js/bootstrap.js',
+				'js/vendor/bootstrap/docs/assets/js/bootstrap.js',
 				'js/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js',
 				'js/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js',
 				'js/vendor/jquery-countdown/jquery.countdown.js',
