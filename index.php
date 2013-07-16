@@ -75,7 +75,7 @@ $app = new \Slim\Slim(array(
 
 		//Redirect to view page
 		$app->flash('success', 'Timer <strong>'.$app->request()->post('Text').'</strong> created!');
-		$app->redirect('/view/'.$id);
+		$app->redirect(BASE_URL.'view/'.$id);
 	});
 
 //Load the app
