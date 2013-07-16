@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "2589d2d9f00d9d851472f634756efcc9",
+    "hash": "95c61cbc64bd6269ced90dcb5e77c77a",
     "packages": [
         {
             "name": "gabordemooij/redbean",
@@ -47,99 +47,6 @@
                 "orm"
             ],
             "time": "2012-11-16 22:41:24"
-        },
-        {
-            "name": "mustache/mustache",
-            "version": "v2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bobthecow/mustache.php",
-                "reference": "v2.1.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/bobthecow/mustache.php/archive/v2.1.0.zip",
-                "reference": "v2.1.0",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Mustache": "src/"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Justin Hileman",
-                    "email": "justin@justinhileman.info",
-                    "homepage": "http://justinhileman.com"
-                }
-            ],
-            "description": "A Mustache implementation in PHP.",
-            "homepage": "https://github.com/bobthecow/mustache.php",
-            "keywords": [
-                "mustache",
-                "templating"
-            ],
-            "time": "2013-01-12 07:18:03"
-        },
-        {
-            "name": "slim/extras",
-            "version": "2.0.3",
-            "target-dir": "Slim/Extras",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/codeguy/Slim-Extras.git",
-                "reference": "2.0.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/codeguy/Slim-Extras/zipball/2.0.3",
-                "reference": "2.0.3",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "slim/slim": ">=2.0.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Twig_Extensions_": "Views/Extension/",
-                    "Slim\\Extras": "."
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Andrew Smith",
-                    "email": "a.smith@silentworks.co.uk",
-                    "homepage": "http://www.silentworks.co.uk/"
-                },
-                {
-                    "name": "Josh Lockhart",
-                    "email": "info@joshlockhart.com",
-                    "homepage": "http://www.joshlockhart.com/"
-                }
-            ],
-            "description": "Extras package for the Slim Framework",
-            "homepage": "http://github.com/codeguy/Slim-Extras",
-            "keywords": [
-                "extensions",
-                "middleware",
-                "templating"
-            ],
-            "time": "2013-01-07 17:56:10"
         },
         {
             "name": "slim/slim",

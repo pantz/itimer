@@ -8,12 +8,11 @@ else
 //Set timezone based on browser later
 date_default_timezone_set('UTC');
 
-define('BASEPATH', dirname(__FILE__).'/');
-
 //Sessions are used for notifications only at this point
 session_cache_limiter(false);
 session_start();
 
+//Load all my php classes
 require 'vendor/autoload.php';
 
 //Setup redbean
