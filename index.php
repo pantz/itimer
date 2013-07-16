@@ -6,7 +6,7 @@ else
 	require('config.php');
 
 //Set timezone based on browser later
-date_default_timezone_set('America/Regina');
+date_default_timezone_set('UTC');
 
 define('BASEPATH', dirname(__FILE__).'/');
 
